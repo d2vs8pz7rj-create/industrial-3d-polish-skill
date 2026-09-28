@@ -1,23 +1,25 @@
 # Industrial 3D Polish Skill
 
-一个可迁移的 Codex skill：从多视角设备图片和可信尺寸开始，在 Blender 里完成比例校准、初模、制造结构、装配细化、材质选择、棚拍布光、渲染和逐轮回验。
+从设备照片到可信的 Blender 写实模型的通用 agent skill。适用于工业设备、机柜、工作站和其他硬表面产品：先校准图片与比例，再修正制造和装配结构，最后选择材质、棚拍灯光、镜头与渲染方案。每一轮修改都用同机位和相邻视角验证。
 
 ## 安装
 
-克隆或下载仓库，把 industrial-3d-polish 文件夹放入 Codex 的 skills 目录：
+克隆或下载此仓库，把 industrial-3d-polish 文件夹放入 Codex 的 skills 目录。
 
 - Windows：%USERPROFILE%\.codex\skills\
 - macOS / Linux：~/.codex/skills/
 
-在任务中提供获授权的设备照片、尺寸和目标输出，然后说：
+使用时提供获授权的参考照片、已知尺寸、现有模型和目标输出，然后要求 agent 使用 industrial-3d-polish。可从照片开始，也可从需要精修的粗模开始。
 
-> 使用 industrial-3d-polish 技能，从这些图片建立可编辑设备模型。先校准多视角比例和结构，再逐步细化装配、材质、灯光和渲染；每阶段给我同机位检查图和推定项。
+## 工作内容
 
-## 内容
+- SKILL.md：全流程、决策顺序和参考文件入口
+- photo-to-model.md：照片盘点、透视校准、多视角约束与灰模
+- geometry-and-assembly.md：钣金、孔、接缝、支撑、传动与紧固件等结构细化
+- materials-and-surfaces.md：工艺识别、材质小样、微纹理、屏幕和玻璃
+- lighting-and-rendering.md：棚景、反射、镜头、Cycles 渲染与成本控制
+- failure-modes.md：常见“不真实”症状的排查顺序和修复路径
+- quality-checks.md：阶段验收、版本保护、跨视角检查和交付记录
+- realtime-transfer.md：仅在需要交互展示时使用的材质与几何迁移检查
 
-- industrial-3d-polish/SKILL.md：完整执行顺序与阶段检查点
-- industrial-3d-polish/references/photo-to-model.md：多视角图片校准与从 2D 建 3D
-- industrial-3d-polish/references/blender-finish.md：结构收尾、材质、灯光、镜头和渲染
-- industrial-3d-polish/references/quality-checks.md：检查证据、迭代记录和停止条件
-
-仓库只包含通用方法，不包含任何设备模型、客户照片、品牌素材、私有路径、服务器地址或凭据。照片无法唯一确定被遮挡结构或制造尺寸；具体项目需要另行提供参考并标明推定范围。
+仓库不含任何项目设备模型、照片、商标、具体尺寸或账号信息。照片无法唯一确定被遮挡结构；视觉拟合不等于制造级 CAD。
