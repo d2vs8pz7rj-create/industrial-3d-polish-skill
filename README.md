@@ -17,6 +17,7 @@
 
 - SKILL.md：全流程、决策顺序和参考文件入口
 - photo-to-model.md：照片盘点、透视校准、多视角约束与灰模
+- photo-to-geometry-playbook.md：部件地图、相机匹配循环、尺寸关系骨架、Blender 构造路线与表面资料提取
 - geometry-and-assembly.md：钣金、孔、接缝、支撑、传动与紧固件等结构细化
 - materials-and-surfaces.md：工艺识别、材质小样、微纹理、屏幕和玻璃
 - lighting-and-rendering.md：棚景、反射、镜头、Cycles 渲染与成本控制
